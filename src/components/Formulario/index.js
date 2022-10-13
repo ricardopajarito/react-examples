@@ -4,7 +4,7 @@ import "./index.css"
 // Formulario con react hook form
 
 const Formulario = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm({mode: "onChange"});
 
     const patterns = {
         name: /^[A-Za-z]+$/i,
