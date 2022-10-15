@@ -73,7 +73,7 @@ const Formulario = () => {
                         })} />
                     <p>{errors.phone && <span>{errors.phone.message}</span>}</p>
                 </div>
-                <input type="submit" className='btn-form' />
+                <button type="submit" className='btn-form'>Enviar</button>
             </form>
         </div>
     )

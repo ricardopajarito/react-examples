@@ -1,8 +1,8 @@
 /* Pallete colors */
 :root {
-    --blue: #3D5A80;
+    --blue: #0A1045;
     --blueclaro: #98C1D9;
-    --gris: #E0FBFC;
+    --gris: #00C2D1;
     --orange: #EE6C4D;
     --black: #293241;
 }
@@ -18,7 +18,7 @@
 
 label {
     color: var(--black);
-    font-size: 14px;
+    font-size: 16px;
     margin-bottom: 10px;
 }
 
@@ -27,6 +27,7 @@ p {
     margin: 0;
     padding: 0;
     height: 16px;
+    font-size: 12px;
 }
 
 form {
@@ -54,13 +55,16 @@ form .row {
     font-weight: bold;
     font-size: 16px;
     cursor: pointer;
+    border-radius: 10px;
+    font-family: 'Silkscreen', cursive;
 }
 
 input {
     outline: none;
     border: none;
     border-bottom: 1px solid var(--black);
-    padding: 5px;
+    padding: 5px 0px;
+    font-family: 'Silkscreen', cursive;
 }
 
 .btn-form:hover {
