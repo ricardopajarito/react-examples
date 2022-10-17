@@ -4,3 +4,4 @@
 Para crear formularios y evitar demasiados renders en la aplicación
 
 #### react query
+Sirve para no utilizar fetch en useEffect
