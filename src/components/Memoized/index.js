@@ -1,6 +1,7 @@
 import { useState, useMemo } from "react";
 
-const MemoizedFunction = () => {
+// useMemo devuelve un valor memorizado si es que no hay cambio
+const MemoizedValue = () => {
     const [count, setCount] = useState(0);
     const [todos, setTodos] = useState([]);
     console.time('calculation time');
@@ -65,4 +66,4 @@ const expensiveCalculation = (num) => {
 //     }
 // }
 
-export default MemoizedFunction;
+export default MemoizedValue;
