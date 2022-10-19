@@ -28,6 +28,7 @@ const Formulario = () => {
                 <div className='row'>
                     <input 
                         required
+                        className={errors.name ? 'input-error' : ''}
                         {...register("name", {
                         required: messages.req,
                         pattern: {
@@ -35,7 +36,7 @@ const Formulario = () => {
                             message: messages.name
                         }
                     })} />
-                    <span className='bar'></span>
+                    <span className={'bar ' + (errors.name ? 'span-error' : '')}></span>
                     <label htmlFor="name">Nombre completo</label>
                     <p> {errors.name && <span>{errors.name.message}</span>}</p>
                 </div>
@@ -44,6 +45,7 @@ const Formulario = () => {
                         required
                         name="mail"
                         type="text"
+                        className={errors.mail ? 'input-error' : ''}
                         {...register("mail", {
                             required: messages.req,
                             pattern: {
@@ -51,7 +53,7 @@ const Formulario = () => {
                                 message: messages.mail
                             }
                         })} />
-                    <span className='bar'></span>
+                    <span className={'bar ' + (errors.mail ? 'span-error' : '')}></span>
                     <label htmlFor="mail">Correo electrónico</label>
                     <p>{errors.mail && <span>{errors.mail.message}</span>}</p>
                 </div>
@@ -60,6 +62,7 @@ const Formulario = () => {
                         required
                         name="phone"
                         type="tel"
+                        className={ errors.phone ? 'input-error' : '' }
                         {...register("phone", {
                             required: messages.req,
                             minLength: {
@@ -75,7 +78,7 @@ const Formulario = () => {
                                 message: messages.phone
                             }
                         })} />
-                    <span className='bar'></span>
+                    <span className={'bar ' + (errors.phone ? 'span-error' : '')}></span>
                     <label htmlFor="phone">Teléfono móvil</label>
                     <p>{errors.phone && <span>{errors.phone.message}</span>}</p>
                 </div>
