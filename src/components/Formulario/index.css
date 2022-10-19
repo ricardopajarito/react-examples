@@ -5,6 +5,7 @@
     --gris: #00C2D1;
     --orange: #EE6C4D;
     --black: #293241;
+    --width: 320px;
 }
 
 .form-container {
@@ -42,9 +43,56 @@ form {
 }
 
 form .row {
-    display: flex;
-    flex-direction: column;
+    position: relative;
     margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    display: block;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid var(--black);
+    padding: 10px 0px;
+    font-family: 'Silkscreen', cursive;
+}
+
+.bar {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.bar::before {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 0;
+    position: absolute;
+    background: var(--gris);
+    transition: 300ms ease all;
+    left: 0%;
+}
+
+input:focus ~ label,
+input:valid ~ label {
+    top: -14px;
+    font-size: 10px;
+}
+
+/* input:not(:placeholder-shown) ~ label */
+
+input:focus ~ .bar::before {
+    width: 100%;
+}
+
+label {
+    font-size: 16px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    top: 10px;
+    transition: 300ms ease all;
 }
 
 .btn-form {
@@ -56,14 +104,6 @@ form .row {
     font-size: 16px;
     cursor: pointer;
     border-radius: 10px;
-    font-family: 'Silkscreen', cursive;
-}
-
-input {
-    outline: none;
-    border: none;
-    border-bottom: 1px solid var(--black);
-    padding: 5px 0px;
     font-family: 'Silkscreen', cursive;
 }
 

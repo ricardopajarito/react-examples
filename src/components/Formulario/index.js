@@ -26,19 +26,22 @@ const Formulario = () => {
         <div className='form-container'>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className='row'>
-                    <label htmlFor="name">Nombre completo</label>
-                    <input {...register("name", {
+                    <input 
+                        required
+                        {...register("name", {
                         required: messages.req,
                         pattern: {
                             value: patterns.name,
                             message: messages.name
                         }
                     })} />
+                    <span className='bar'></span>
+                    <label htmlFor="name">Nombre completo</label>
                     <p> {errors.name && <span>{errors.name.message}</span>}</p>
                 </div>
                 <div className='row'>
-                    <label htmlFor="mail">Correo electrónico</label>
                     <input
+                        required
                         name="mail"
                         type="text"
                         {...register("mail", {
@@ -48,14 +51,15 @@ const Formulario = () => {
                                 message: messages.mail
                             }
                         })} />
+                    <span className='bar'></span>
+                    <label htmlFor="mail">Correo electrónico</label>
                     <p>{errors.mail && <span>{errors.mail.message}</span>}</p>
                 </div>
                 <div className='row'>
-                    <label htmlFor="phone">Teléfono móvil</label>
                     <input
+                        required
                         name="phone"
                         type="tel"
-                        placeholder="+34"
                         {...register("phone", {
                             required: messages.req,
                             minLength: {
@@ -71,6 +75,8 @@ const Formulario = () => {
                                 message: messages.phone
                             }
                         })} />
+                    <span className='bar'></span>
+                    <label htmlFor="phone">Teléfono móvil</label>
                     <p>{errors.phone && <span>{errors.phone.message}</span>}</p>
                 </div>
                 <button type="submit" className='btn-form'>Enviar</button>
