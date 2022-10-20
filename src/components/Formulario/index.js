@@ -1,10 +1,11 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { useForm } from "react-hook-form"
 import "./index.css"
 // Formulario con react hook form
 
 const Formulario = () => {
     const { register, handleSubmit, formState: { errors } } = useForm({ mode: "onChange" });
+    const [enviando, setEnviando] = useState(false);
 
     const patterns = {
         name: /^[A-Za-z]+$/i,
@@ -20,6 +21,7 @@ const Formulario = () => {
 
     const onSubmit = (userInfo) => {
         console.log("userInfo: ", userInfo);
+        setEnviando(data => !data);
     }
 
     return (
@@ -82,7 +84,7 @@ const Formulario = () => {
                     <label htmlFor="phone">Teléfono móvil</label>
                     <p>{errors.phone && <span>{errors.phone.message}</span>}</p>
                 </div>
-                <button type="submit" className='btn-form'>Enviar</button>
+                <button type="submit" className='btn-form'>{ enviando ? <div className='spinner'></div> : 'Enviar'}</button>
             </form>
         </div>
     )

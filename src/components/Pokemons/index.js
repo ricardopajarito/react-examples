@@ -12,7 +12,7 @@ const Pokemons = () => {
     if (error) {
         return <div>Error!</div>
     }
-    console.log(data.results);
+    
     return (
         <div className='pokemon-list'>
             {
