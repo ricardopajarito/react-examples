@@ -1,5 +1,6 @@
 
 .pokemon-list {
+    scroll-snap-align: start;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -14,6 +15,7 @@
     border: 1px solid #000;
     border-radius: 10px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: var(--orange);

@@ -3,6 +3,12 @@ const fetchPokemons = async () => {
     return res.json();
 }
 
+const fetchPokemon = async (url) => {
+    const res = await fetch(url)
+    return res.json();
+}
+
 module.exports = {
-    fetchPokemons
+    fetchPokemons,
+    fetchPokemon
 }

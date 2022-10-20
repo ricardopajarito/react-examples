@@ -1,6 +1,7 @@
 import { useQuery } from 'react-query'
 import { fetchPokemons } from '../../api/pokemonsApi'
 import './index.css'
+import Pokemon from './Pokemon'
 
 const Pokemons = () => {
     const { isLoading, error, data } = useQuery('pokemons', fetchPokemons)
@@ -12,15 +13,13 @@ const Pokemons = () => {
     if (error) {
         return <div>Error!</div>
     }
-    
+
     return (
         <div className='pokemon-list'>
             {
                 data.results.map((pokemon, index) => {
                     return (
-                        <div className='pokemon' key={index}>
-                            <h5>{pokemon.name}</h5>
-                        </div>
+                        <Pokemon key={index} url={pokemon.url} name={pokemon.name} />
                     )
                 })
             }
