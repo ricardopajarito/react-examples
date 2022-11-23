@@ -24,3 +24,5 @@ npx terser -c -m -o like-button.min.js -- like-button.js
 ```
 
 This will produce a file called `like-button.min.js` with the minified code in the same directory. If you're typing this often, you can [create an npm script](https://medium.freecodecamp.org/introduction-to-npm-scripts-1dbb2ae01633) to give this command a name.
+
+agregue una linea
